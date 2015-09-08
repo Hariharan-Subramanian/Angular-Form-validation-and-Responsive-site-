@@ -1,0 +1,14 @@
+<div class="video-wrapper">
+    <div class="fluid-width-video-wrapper">
+        <slick lazy-load='ondemand' dots="true" autoplay="false" autoplaySpeed="1000" dots="false" infinite="true" fade="false" slides-to-show=1 slides-to-scroll=1 ng-animate="true" class="slider lazy">
+            <div ng-repeat="item in data">
+                <div class="image"><img data-lazy="{{item.image}}" />
+                    <div class="text">
+                        <h3>{{item.heading}}</h3>
+                        <p>{{item.text}}</p>
+                    </div>
+                </div>
+            </div>
+        </slick>
+    </div>
+</div>

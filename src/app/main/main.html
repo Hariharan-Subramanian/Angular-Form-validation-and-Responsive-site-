@@ -1,0 +1,72 @@
+<div class="container-fluid">
+    <div class="main-container" ng-controller="MainCtrl as vm">
+        <div class="top-space-20"></div>
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <h1> Contact us</h1>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-lg-3 col-md-3 col-sm-3 desk-caro">
+                <sw-carousel data="vm.carosuselIsolate"></sw-carousel>
+            </div>
+            <div class="col-lg-9 col-md-9 col-xs-12 col-sm-9">
+                <div class="content space-divider-10">
+                    <p> We are leading company Donec elementum mi vitae enim fermentum lobortis. In hac habitasse platea dictumst. Ut pellentesque, orci sed mattis consequat, libero ante lacinia arcu, ac porta lacus urna in lorem. Praesent consectetur tristique augue, eget elementum diam suscipit id. Wide range of services Interdum et malesuada fames ac ante ipsum primis in faucibus. Nam condimentum laoreet sagittis. Duis quis ullamcorper leo. Suspendisse potenti.</p>
+                    <p> We are leading company Donec elementum mi vitae enim fermentum lobortis. In hac habitasse platea dictumst. Ut pellentesque, orci sed mattis consequat, libero ante lacinia arcu, ac porta lacus urna in lorem. Praesent consectetur tristique augue, eget elementum diam suscipit id. Wide range of services Interdum et malesuada fames ac ante ipsum primis in faucibus. Nam condimentum laoreet sagittis. Duis quis ullamcorper leo. Suspendisse potenti.</p>
+                    <p> We are leading company Donec elementum mi vitae enim fermentum lobortis. In hac habitasse platea dictumst. Ut pellentesque, orci sed mattis consequat, libero ante lacinia arcu, ac porta lacus urna in lorem. Praesent consectetur tristique augue, eget elementum diam suscipit id. Wide range of services Interdum et malesuada fames ac ante ipsum primis in faucibus. Nam condimentum laoreet sagittis. Duis quis ullamcorper leo. Suspendisse potenti.</p>
+                    <p> We are leading company Donec elementum mi vitae enim fermentum lobortis. In hac habitasse platea dictumst. Ut pellentesque, orci sed mattis consequat, libero ante lacinia arcu, ac porta lacus urna in lorem. Praesent consectetur tristique augue, eget elementum diam suscipit id. Wide range of services Interdum et malesuada fames ac ante ipsum primis in faucibus. Nam condimentum laoreet sagittis. Duis quis ullamcorper leo. Suspendisse potenti.
+                    </p>
+                </div>
+                <div class="alert alert-success" role="alert" ng-show="vm.isSuccess">
+                    <a href="#" class="alert-link">sample text</a>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-6 ">
+                        <form name="regform" novalidate>
+                            <div class="form-group" ng-class="{ 'has-error' : regform.name.$invalid && !regform.name.$pristine }">
+                                <input type="text" name="name" class="form-control" ng-model="user.name" required placeholder="firstname lastname">
+                                <p ng-show="regform.name.$invalid && !regform.name.$pristine" class="help-block">Your name is required.</p>
+                            </div>
+                            <div class="form-group" ng-class="{ 'has-error' : regform.password.$error.minlength }">
+                                <input class="form-control" name="password" type="password" required ng-model="password" placeholder="password" ng-minlength="6">
+                                <span class="error" ng-show="regform.password.$error.minlength">password Too short!</span>
+                            </div>
+                            <div class="form-group" ng-class="{ 'has-error' : regform.confirm_password.$error.validator || regform.confirm_password.$error.minlength }">
+                                <input class="form-control" name="confirm_password" type="password" required ng-model="confirm_password" ui-validate=" '$value==password' " ui-validate-watch=" 'password' " placeholder="confirm password" ng-minlength="6">
+                                <p ng-show='regform.confirm_password.$error.validator' class="help-block">Passwords do not match!</p>
+                                <p class="error" ng-show="regform.confirm_password.$error.minlength">password Too short!</p>
+                            </div>
+                            <div class="form-group" ng-class="{ 'has-error' : regform.name.$invalid && !regform.name.$pristine }">
+                                <input type="email" name="email" class="form-control" ng-model="user.email" placeholder="E-mail">
+                                <p ng-show="regform.email.$invalid && !regform.email.$pristine" class="help-block">Enter a valid email.</p>
+                            </div>
+                            <div class="form-group" ng-class="{ 'has-error' : regform.weburl.$error.required || regform.weburl.$error.url }">
+                                <input type="url" name="weburl" class="form-control" id="website" ng-required ng-model="user.url" placeholder="website URL">
+                                <p ng-show="regform.weburl.$error.required" class="help-block">You Can't Leave This Field Empty</p>
+                                <p ng-show="regform.weburl.$error.url" class="help-block">Enter Valid URL </p>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                        <h3>Business Unit</h3>
+                        <div class="well well-sm b-unit">
+                            <sw-bunit data="vm.bunitIsolate"></sw-bunit>
+                        </div>
+                    </div>
+                </div>
+                <div class="row space-divider-10 ">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                        <button type="button" class="btn btn-default pull-right" ng-disabled="regform.$invalid">Submit</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-3 col-md-3 col-sm-3 mobile-caro">
+                        <sw-carousel data="vm.carosuselIsolate"></sw-carousel>
+                    </div>
+                    <div class="space-divider">
+                    </div>
+                </div>
+            </div>
+        </div>
