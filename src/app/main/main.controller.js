@@ -9,6 +9,7 @@
         var vm = this;
         var carouselData = {};
         var bunitData = {};
+        vm.isSuccess=false;
 
 
         initmain();
@@ -24,8 +25,9 @@
             });
         }
         vm.submitForm = function() {
-            if ($scope.userForm.$valid) {
-
+            if ($scope.regform.$valid) {
+                     vm.isSuccess=true;
+                     console.log(vm.isSuccess)
             }
         };
 
